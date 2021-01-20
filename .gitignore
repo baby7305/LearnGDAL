@@ -56,3 +56,7 @@ compile_commands.json
 
 # 忽略idea目录
 *.idea/
+
+# 忽略visual studio目录
+*.vs/
+*out/
