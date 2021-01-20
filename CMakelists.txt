@@ -10,12 +10,18 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
+set(GDAL_DIR "E:\\gdal\\release-1928-x64-gdal-3-2-1-mapserver-7-6-2-libs")
+include_directories(${GDAL_DIR}/include)
+
+link_directories(${GDAL_DIR}/Lib)
 
 add_executable(helloworld
-    mainwindow.ui
-    mainwindow.cpp
     main.cpp
-    resources.qrc
 )
 
-target_link_libraries(helloworld PRIVATE Qt6::Widgets)
+target_link_libraries(helloworld gdal_i)
+
+SET(IMAGES ${CMAKE_SOURCE_DIR}/lianggongchunri_de_youyv-009.jpg)
+FILE(COPY ${IMAGES} DESTINATION .)
+FILE(COPY ${IMAGES} DESTINATION "Debug")
+FILE(COPY ${IMAGES} DESTINATION "Release")
