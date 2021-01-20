@@ -60,3 +60,10 @@ compile_commands.json
 # 忽略visual studio目录
 *.vs/
 *out/
+
+# Xmake cache
+*.xmake/
+*build/
+
+# MacOS Cache
+*.DS_Store
